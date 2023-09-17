@@ -18,8 +18,8 @@ function setup() {
 }
 
 function draw(){
-  d = map(sin(radians(frameCount)),-1,1,0.05,1)
-  c= map(cos(radians(frameCount*4)),-1,1,90,200)
+  d = map(sin(radians(frameCount)),-1,1,0.05,1) // smaller number make it appear to soom out
+  c= map(cos(radians(frameCount*4)),-1,1,90,200) // fade the color
   bitit();
 }
 
