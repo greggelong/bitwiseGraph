@@ -1,8 +1,10 @@
 let cnv;
 let sz = 10;
+let c;
+let d;
 function setup() {
-  colorMode(HSB, 70);
-  cnv = createCanvas(600, 600);
+  colorMode(HSB, 90);
+  cnv = createCanvas(800, 800);
   cx = (windowWidth - cnv.width) / 2;
   cy = (windowHeight - cnv.height) / 2;
   cnv.position(cx, cy);
@@ -12,16 +14,23 @@ function setup() {
   for (let i = 0; i < 60; i++) {
     // print(i,i&60, i|60, i^60)
   }
+  //frameRate(3)
+}
+
+function draw(){
+  d = map(sin(radians(frameCount/4)),-1,1,0.1,4)
+  c= map(cos(radians(frameCount*2)),-1,1,90,200)
+  bitit();
 }
 
 function bitit() {
-  for (let j = 0; j < 60; j++) {
-    for (let i = 0; i < 60; i++) {
-      //let clrAnd = j & i;
+  for (let j = 0; j < 80; j++) {
+    for (let i = 0; i < 80; i++) {
+      let clrAnd = (j/d) & (i/d);
       //let clrOr = j | i;
-      let clrXor = j ^ i;
+      //let clrXor = (j/d) ^ (i/d);
       //let clrNot = j | ~i;
-      fill(clrXor, 60, 60);
+      fill(clrAnd,c-clrAnd,90);
 
       rect(i * sz, j * sz, sz, sz);
     }
