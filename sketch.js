@@ -18,8 +18,8 @@ function setup() {
 }
 
 function draw(){
-  d = map(sin(radians(frameCount/4)),-1,1,0.1,4)
-  c= map(cos(radians(frameCount*2)),-1,1,90,200)
+  d = map(sin(radians(frameCount)),-1,1,0.05,1)
+  c= map(cos(radians(frameCount*4)),-1,1,90,200)
   bitit();
 }
 
